@@ -38,9 +38,10 @@ createConnection().then((connection) => {
         app.get('*', function (req, res) { res.redirect('/error/notfound') }); //default route
     }
 }).catch((error)=>{
+    console.log('BAD CONNECT 2');
+
     console.log('error',error);
 
-    console.log('BAD CONNECT 2');
     app.get('*', function (req, res) { res.redirect('/error/dbconnection') }); //default route when DB connection fails
 });
 
