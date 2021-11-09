@@ -8,29 +8,32 @@ import masterRouter from './routes/index';
 const app = express();
 console.log('STARTED');
 
+// routes
+app.use((req, res, next) => { //make CORS not complain
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+    next();
+});
+app.use('/', masterRouter); //delegate route management to masterRoute
+
 // connect to the database 
-/*
 createConnection().then((connection) => {
+    console.log('TRIED TO CONNECT');
+
     if (connection === undefined) {
         app.get('*', function (req, res) { res.redirect('/error/dbconnection') }); //default route when DB connection fails
+        console.log('BAD CONNECT 1');
         throw new Error('Error connecting to database');
     } else { 
-        app.use((req, res, next) => { //make CORS not complain
-            res.header('Access-Control-Allow-Origin', '*');
-            res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
-            res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
-            res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
-            next();
-        });
-        app.use('/', masterRouter); //delegate route management to masterRoute
+        console.log('CONNECT SUCESS');
         app.get('*', function (req, res) { res.redirect('/error/notfound') }); //default route
     }
 }).catch((error)=>{
-   
-});*/
-
-app.get('*', function (req, res) { res.send('a') }); //default route when DB connection fails
-
+    console.log('BAD CONNECT 2');
+    app.get('*', function (req, res) { res.redirect('/error/dbconnection') }); //default route when DB connection fails
+});
 
 
 // start the Express server
