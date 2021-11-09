@@ -8,13 +8,13 @@ module.exports = {
     "synchronize": true, //Turn this to false on production to avoid db accidental syncronizations
     "logging": false,
     "entities": [
-      "dist/models/**/*.js" //This is the transpiled one folder
+      process.env.ENTITIES_PATH,
     ],
     "migrations": [
-      "src/migrations/**/*.ts" //This is the NOT-transpiled one folder
+      process.env.MIGRATIONS_PATH + "/**/*.ts" //This is the NOT-transpiled one folder
     ],
     "cli": {
-      "migrationsDir":"src/migrations" //This is the NOT-transpiled one folder
+      "migrationsDir":process.env.MIGRATIONS_PATH //This is the NOT-transpiled one folder
     },
     "ssl":true,
     "extra": {

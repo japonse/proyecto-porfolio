@@ -4,7 +4,8 @@ dotenv.config();
 import express from 'express';
 
 const app = express();
-app.get('*', function (req, res) { res.send('Hello world!') });
+
+app.get('*', function (req, res) { res.send('Hello world2') });
 
 // start the Express server
 app.listen(process.env.PORT, () => {
