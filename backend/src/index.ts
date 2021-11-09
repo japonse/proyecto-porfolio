@@ -9,6 +9,7 @@ const app = express();
 console.log('STARTED');
 
 // connect to the database 
+/*
 createConnection().then((connection) => {
     if (connection === undefined) {
         app.get('*', function (req, res) { res.redirect('/error/dbconnection') }); //default route when DB connection fails
@@ -25,8 +26,10 @@ createConnection().then((connection) => {
         app.get('*', function (req, res) { res.redirect('/error/notfound') }); //default route
     }
 }).catch((error)=>{
-    app.get('*', function (req, res) { res.redirect('/error/dbconnection') }); //default route when DB connection fails
-});
+   
+});*/
+
+app.get('*', function (req, res) { res.redirect('/error/dbconnection') }); //default route when DB connection fails
 
 
 
