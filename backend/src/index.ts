@@ -19,16 +19,18 @@ app.use((req, res, next) => { //make CORS not complain
 app.use('/', masterRouter); //delegate route management to masterRoute
 
 // connect to the database 
+console.log('TRIED TO CONNECT');
+console.log(process.env.PORT ?? 'nohay');
+console.log(process.env.DB_PORT ?? 'nohay');
+console.log(process.env.DB_HOST ?? 'nohay');
+console.log(process.env.DB_DATABASE ?? 'nohay');
+console.log(process.env.DB_PASSWORD ?? 'nohay');
+console.log(process.env.DB_USERNAME ?? 'nohay');
+console.log(process.env.ENTITIES_PATH ?? 'nohay');
+console.log(process.env.MIGRATIONS_PATH ?? 'nohay');
+
 createConnection().then((connection) => {
-    console.log('TRIED TO CONNECT');
-    console.log(process.env.PORT ?? 'nohay');
-    console.log(process.env.DB_PORT ?? 'nohay');
-    console.log(process.env.DB_HOST ?? 'nohay');
-    console.log(process.env.DB_DATABASE ?? 'nohay');
-    console.log(process.env.DB_PASSWORD ?? 'nohay');
-    console.log(process.env.DB_USERNAME ?? 'nohay');
-    console.log(process.env.ENTITIES_PATH ?? 'nohay');
-    console.log(process.env.MIGRATIONS_PATH ?? 'nohay');
+    
 
     if (connection === undefined) {
         app.get('*', function (req, res) { res.redirect('/error/dbconnection') }); //default route when DB connection fails
