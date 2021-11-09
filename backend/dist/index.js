@@ -28,7 +28,7 @@ createConnection().then((connection) => {
 }).catch((error)=>{
    
 });*/
-app.get('*', function (req, res) { res.redirect('/error/dbconnection'); }); //default route when DB connection fails
+app.get('*', function (req, res) { res.send('a'); }); //default route when DB connection fails
 // start the Express server
 app.listen(process.env.PORT, () => {
     console.log(`server started at http://localhost:${process.env.PORT}`);

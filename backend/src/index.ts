@@ -29,7 +29,7 @@ createConnection().then((connection) => {
    
 });*/
 
-app.get('*', function (req, res) { res.redirect('/error/dbconnection') }); //default route when DB connection fails
+app.get('*', function (req, res) { res.send('a') }); //default route when DB connection fails
 
 
 
