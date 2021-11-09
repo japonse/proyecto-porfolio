@@ -40,8 +40,8 @@ console.log((_h = process.env.MIGRATIONS_PATH) !== null && _h !== void 0 ? _h : 
         app.get('*', function (req, res) { res.redirect('/error/notfound'); }); //default route
     }
 }).catch((error) => {
-    console.log('error', error);
     console.log('BAD CONNECT 2');
+    console.log('error', error);
     app.get('*', function (req, res) { res.redirect('/error/dbconnection'); }); //default route when DB connection fails
 });
 // start the Express server
