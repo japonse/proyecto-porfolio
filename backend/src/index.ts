@@ -24,6 +24,8 @@ createConnection().then((connection) => {
         app.use('/', masterRouter); //delegate route management to masterRoute
         app.get('*', function (req, res) { res.redirect('/error/notfound') }); //default route
     }
+}).catch((error)=>{
+    app.get('*', function (req, res) { res.redirect('/error/dbconnection') }); //default route when DB connection fails
 });
 
 
