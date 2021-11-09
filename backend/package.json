@@ -4,7 +4,8 @@
   "description": "Crud project express/angular deployable to heroku",
   "main": "dist/index.js",
   "scripts": {
-    "start": "tsc && node dist/index.js",
+    "start": "node dist/index.js",
+    "build": "tsc",
     "dev": "nodemon --config nodemon.json src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
