@@ -9,6 +9,7 @@ const express_1 = __importDefault(require("express"));
 const typeorm_1 = require("typeorm");
 const index_1 = __importDefault(require("./routes/index"));
 const app = (0, express_1.default)();
+console.log('STARTED');
 // connect to the database 
 (0, typeorm_1.createConnection)().then((connection) => {
     if (connection === undefined) {
