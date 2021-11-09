@@ -6,7 +6,7 @@ import { createConnection } from "typeorm";
 import masterRouter from './routes/index'; 
 
 const app = express();
-
+console.log('STARTED');
 
 // connect to the database 
 createConnection().then((connection) => {
