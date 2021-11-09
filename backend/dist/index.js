@@ -34,14 +34,13 @@ console.log((_h = process.env.MIGRATIONS_PATH) !== null && _h !== void 0 ? _h : 
     if (connection === undefined) {
         app.get('*', function (req, res) { res.redirect('/error/dbconnection'); }); //default route when DB connection fails
         console.log('BAD CONNECT 1');
-        throw new Error('Error connecting to database');
     }
     else {
         console.log('CONNECT SUCESS');
         app.get('*', function (req, res) { res.redirect('/error/notfound'); }); //default route
     }
 }).catch((error) => {
-    console.log(error);
+    console.log('error', error);
     console.log('BAD CONNECT 2');
     app.get('*', function (req, res) { res.redirect('/error/dbconnection'); }); //default route when DB connection fails
 });
