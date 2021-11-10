@@ -1,6 +1,6 @@
 {
    "scripts": {
-    "start": "cd frontend && npm i @angular/cli @angular-devkit/build-angular @angular/compiler-cli typescript --save-prod && ng build --configuration production && cd . && cd backend && npm intall",
+    "start": "cd frontend && npm i @angular/cli @angular-devkit/build-angular @angular/compiler-cli typescript --save-prod && ng build --configuration production && cd . && cd backend && npm install",
     "heroku-postbuild": "npm start"
   }
 }
