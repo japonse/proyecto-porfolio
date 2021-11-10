@@ -1,12 +1,10 @@
 {
   "restartable": "rs",
   "ignore": [".git", "node_modules/", "dist/", "coverage/"],
-  "watch": ["src/"],
-  "execMap": {
-    "ts": "node -r ts-node/register"
-  },
+  "watch": ["dist/"],
+  "exec": "node src/index.ts",
   "env": {
     "NODE_ENV": "development"
-  },
-  "ext": "js,json,ts"
+  }
+  
 }
