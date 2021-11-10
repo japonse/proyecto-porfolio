@@ -1,6 +1,6 @@
 {
    "scripts": {
-    "heroku-prebuild": "cd frontend && npm update --production",
+    "heroku-prebuild": "cd frontend && npm install --production",
     "start": "cd backend && npm install --production && npm start"
   }
 }
