@@ -9,5 +9,6 @@ router.get('/',  (req: express.Request, res: express.Response) => {
 
 router.get('/call', apiController.callControler);
 router.get('/recall', apiController.recallControler);
+router.get('*', function (req, res) { res.redirect('/error/notfound') });
 
 export = router;
