@@ -10,6 +10,9 @@ const app = express();
 
 // angular bundle
 //app.use(express.static(path.join(__dirname, '..', '..', 'frontend', 'dist', 'angular-heroku')));
+//"heroku-prebuild": "cd frontend && npm install",
+console.log(path.join(__dirname, '..', 'dist_frontend', 'angular-heroku'));
+console.log(path.join(__dirname, '..', 'dist_frontend', 'angular-heroku','index.html'));
 app.use(express.static(path.join(__dirname, '..', 'dist_frontend', 'angular-heroku'))); 
 
 // routes
