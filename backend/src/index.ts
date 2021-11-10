@@ -9,11 +9,7 @@ import masterRouter from './routes/index';
 const app = express();
 
 // angular bundle
-//app.use(express.static(path.join(__dirname, '..', '..', 'frontend', 'dist', 'angular-heroku')));
-//"heroku-prebuild": "cd frontend && npm install",
-console.log(path.join(__dirname, '..', 'dist_frontend', 'angular-heroku'));
-console.log(path.join(__dirname, '..', 'dist_frontend', 'angular-heroku','index.html'));
-app.use(express.static(path.join(__dirname, '..', 'dist_frontend', 'angular-heroku'))); 
+app.use(express.static(path.join(__dirname, '..', '..', 'frontend', 'dist', 'angular-heroku')));
 
 // routes
 app.use((req, res, next) => { // make CORS not complain
@@ -24,8 +20,7 @@ app.use((req, res, next) => { // make CORS not complain
     next();
 });
 app.use('/', masterRouter); // delegate route management to masterRoute
-//app.get('/*', function(req,res) {res.sendFile(path.join(__dirname, '..', '..', 'frontend', 'dist', 'angular-heroku','index.html'));});
-app.get('/*', function(req,res) {res.sendFile(path.join(__dirname, '..', 'dist_frontend', 'angular-heroku','index.html'));});
+app.get('/*', function(req,res) {res.sendFile(path.join(__dirname, '..', '..', 'frontend', 'dist', 'angular-heroku','index.html'));});
 
 // connect to the database 
 createConnection().then((connection) => {
