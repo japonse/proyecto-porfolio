@@ -11,7 +11,8 @@ const typeorm_1 = require("typeorm");
 const index_1 = __importDefault(require("./routes/index"));
 const app = (0, express_1.default)();
 // angular bundle
-app.use(express_1.default.static(path_1.default.join(__dirname, '..', '..', 'frontend', 'dist', 'angular-heroku')));
+//app.use(express.static(path.join(__dirname, '..', '..', 'frontend', 'dist', 'angular-heroku')));
+app.use(express_1.default.static(path_1.default.join(__dirname, '..', 'dist_frontend', 'angular-heroku')));
 // routes
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -21,7 +22,8 @@ app.use((req, res, next) => {
     next();
 });
 app.use('/', index_1.default); // delegate route management to masterRoute
-app.get('/*', function (req, res) { res.sendFile(path_1.default.join(__dirname, '..', '..', 'frontend', 'dist', 'angular-heroku', 'index.html')); });
+//app.get('/*', function(req,res) {res.sendFile(path.join(__dirname, '..', '..', 'frontend', 'dist', 'angular-heroku','index.html'));});
+app.get('/*', function (req, res) { res.sendFile(path_1.default.join(__dirname, '..', 'dist_frontend', 'angular-heroku', 'index.html')); });
 // connect to the database 
 (0, typeorm_1.createConnection)().then((connection) => {
     if (connection === undefined) {

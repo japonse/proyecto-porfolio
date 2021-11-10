@@ -9,7 +9,8 @@ import masterRouter from './routes/index';
 const app = express();
 
 // angular bundle
-app.use(express.static(path.join(__dirname, '..', '..', 'frontend', 'dist', 'angular-heroku')));
+//app.use(express.static(path.join(__dirname, '..', '..', 'frontend', 'dist', 'angular-heroku')));
+app.use(express.static(path.join(__dirname, '..', 'dist_frontend', 'angular-heroku'))); 
 
 // routes
 app.use((req, res, next) => { // make CORS not complain
@@ -20,7 +21,8 @@ app.use((req, res, next) => { // make CORS not complain
     next();
 });
 app.use('/', masterRouter); // delegate route management to masterRoute
-app.get('/*', function(req,res) {res.sendFile(path.join(__dirname, '..', '..', 'frontend', 'dist', 'angular-heroku','index.html'));});
+//app.get('/*', function(req,res) {res.sendFile(path.join(__dirname, '..', '..', 'frontend', 'dist', 'angular-heroku','index.html'));});
+app.get('/*', function(req,res) {res.sendFile(path.join(__dirname, '..', 'dist_frontend', 'angular-heroku','index.html'));});
 
 // connect to the database 
 createConnection().then((connection) => {
