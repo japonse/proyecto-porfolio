@@ -10,5 +10,6 @@ router.get('/', (req, res) => {
 });
 router.get('/call', api_controller_1.default.callControler);
 router.get('/recall', api_controller_1.default.recallControler);
+router.get('*', function (req, res) { res.redirect('/error/notfound'); });
 module.exports = router;
 //# sourceMappingURL=api_routes.js.map
