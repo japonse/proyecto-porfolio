@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --dark_bg: rgb(32,38,52);
+  --dark_bg_card: rgb(41,48,66);
+  --dark_bg_card_title: rgb(25, 29, 36);
+  --dark_font_card: rgb(255,255,255);
+  --dark_text_shadow: rgba(0, 0, 0, 0.5);
+  --light_bg: rgb(246,248,251);
+  --light_bg_card: rgb(255,255,255);
+  --light_bg_card_title: rgb(255,255,255);
+  --light_font_card: rgb(73,80,87);
+  --light_text_shadow: rgba(255,255,255,0);
+  --color_card_title_border: rgba(0,0,0,0);
+
+  --color_bg_header: rgb(5, 9, 16);
+  --color_bg: rgb(32,38,52);
+  --color_bg_card: rgb(41,48,60);
+  --color_bg_card_title: rgb(25, 29, 36);
+  --color_font_card: rgb(255,255,255);
+  --color_text_shadow: rgba(0,0,0,0.5);
+  --color_card_title_border: rgba(0,0,0,0);
+  --bg_shadow_top: 0px 0px 2000px 150px rgba(255, 0, 0,0.2);
+  --bg_shadow_bottom: 0px 0px 4000px 200px rgba(255, 0, 255,0.2);
+
+
+}
+body{
+  margin:0px;
+  padding: 0px;
+  /*background: rgb(33, 37, 41);*/
+  background-color: var(--color_bg);
+
+}
+
+h1{
+  margin:0px;
+}
+
+.textShadow{
+  text-shadow: var(--color_text_shadow) 0px 2px 2px;
+}
