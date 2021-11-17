@@ -340,15 +340,15 @@ div{
   }
 
   .header{
-    padding:0px 8px 0px 8px;
+    padding:0px 20px 0px 20px;
   }
 
   .shadowTest1{
-    opacity:0.5;
+    opacity:0.2;
   }
 
   .shadowTest2{
-    opacity:0.5;
+    opacity:0.2;
   }
 }
 
