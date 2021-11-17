@@ -34,7 +34,7 @@ export class MainComponent implements OnInit {
       setTimeout(()=>{
         this.headerConsoleRoute  = "Ampersand";
         this.headerConsoleComand = "_";
-      },500);
+      },300);
     }
   }
 
