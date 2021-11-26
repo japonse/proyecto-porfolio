@@ -1,6 +1,16 @@
 #visual{
-  position:absolute;
-  top:100vh;
-  left:0px;
-  border:1px solid red;
+  position:relative;
+  border:1px solid rgb(0, 255, 64);
+}
+
+.division{
+  height:33%;
+  border:1px solid blue;
+  display:block;
+}
+
+#primerFrame{
+  border:solid 1px red;
+  height:100vh;
+  width:100%;
 }
