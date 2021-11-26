@@ -1,13 +1,21 @@
+
 import { Component, OnInit, Input} from '@angular/core';
 import {ElementRef} from '@angular/core';
 import {lightTheme} from 'src/app/themes/light-theme';
 import {darkTheme} from 'src/app/themes/dark-theme';
+import { disableDebugTools } from '@angular/platform-browser';
+import { AngularEditorConfig } from '@kolkov/angular-editor';
+
+
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
+
+
+
 export class MainComponent implements OnInit {
 
   @Input() headerConsoleComand?: string = "";
@@ -15,6 +23,50 @@ export class MainComponent implements OnInit {
   headerConsoleRoute:string         = "";
   headerConsoleDesiredComand:string = "cd Ampersand";
   currentTheme                      = darkTheme;
+  htmlContent:string                = '';
+  editorConfig: AngularEditorConfig = {
+    editable: false,
+      spellcheck: true,
+      height: 'auto',
+      minHeight: '0',
+      maxHeight: 'auto',
+      width: 'auto',
+      minWidth: '0',
+      translate: 'yes',
+      enableToolbar: true,
+      showToolbar: true,
+      placeholder: 'Enter text here...',
+      defaultParagraphSeparator: '',
+      defaultFontName: '',
+      defaultFontSize: '',
+      fonts: [
+        {class: 'arial', name: 'Arial'},
+        {class: 'times-new-roman', name: 'Times New Roman'},
+        {class: 'calibri', name: 'Calibri'},
+        {class: 'comic-sans-ms', name: 'Comic Sans MS'}
+      ],
+      customClasses: [
+      {
+        name: 'quote',
+        class: 'quote',
+      },
+      {
+        name: 'redText',
+        class: 'redText'
+      },
+      {
+        name: 'titleText',
+        class: 'titleText',
+        tag: 'h1',
+      },
+    ],
+    sanitize: true,
+    toolbarPosition: 'top',
+    toolbarHiddenButtons: [
+      ['bold', 'italic'],
+      ['fontSize']
+    ]
+  };
 
   urlImg: string  = "https://avatars.githubusercontent.com/u/67862213?s=400&amp;u=df6f061706ddf5427b28fa2d5cd031932e626238&amp;v=4";
   urlImg2: string = "https://www.solucionex.com/sites/default/files/posts/imagen/css_blog.png"
@@ -37,6 +89,7 @@ export class MainComponent implements OnInit {
       },300);
     }
   }
+
 
   getUsers(): void{
 
@@ -66,16 +119,13 @@ export class MainComponent implements OnInit {
         this.headerConsoleComand = "help";
       break;
       case 'help':
-        this.headerConsoleComand = "Type 'theme dark' or 'theme light' to change between themes."
+        this.headerConsoleComand = "Type 'theme dark' or 'theme light' to change between themes (PRESS ENTER TO CLEAR)"
       break;
       case '':
-        this.headerConsoleComand = "Type 'theme dark' or 'theme light' to change between themes."
-      break;
-      case 'command not found':
-        this.headerConsoleComand = ""
+        this.headerConsoleComand = "Type 'theme dark' or 'theme light' to change between themes (PRESS ENTER TO CLEAR)"
       break;
       default:
-        this.headerConsoleComand = "Command not found";
+        this.headerConsoleComand = "";
       break;
     }
   }

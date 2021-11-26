@@ -6,8 +6,8 @@
 <div class='header'>
   <div class='setMiddle'>
       <div class='ampersandLogo' (click)='changeTheme()'>&</div>
-      <div class='ampersandText1'>:\{{headerConsoleRoute}}></div>
-      <input class='ampersandTextConsole' type="text" [(ngModel)]="headerConsoleComand" (keyup.enter)="execAmpersandShell()"/>
+      <div class='ampersandText'>:\{{headerConsoleRoute}}></div>
+      <input class='ampersandTextConsole' type="text" autocorrect="off" autocapitalize="off" spellcheck="false" [(ngModel)]="headerConsoleComand" (keyup.enter)="execAmpersandShell()"/>
   </div>
   <div class='setMiddle'>
     <span class='javierPonsodaText'>Javier Ponsoda</span>
@@ -55,9 +55,8 @@
         </div>
       </div>
       <div class='cardArticleContent'>
-
-        Theming web applications has always been a challenge. We’ve had variables for our CSS for a while now in CSS languages like LESS and SASS but those were static. Some of us went as far as to dynamically compile our LESS/SASS on the client or *gasp* inline style all our colors.
-        Now that CSS variables have became main stream we don’t have to worry about any of that anymore! We can have our cake and eat it too! On a side note, this really makes me question the value of these languages these days.
+        <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent"></angular-editor>
+        <div [innerHTML]="htmlContent"></div>
       </div>
     </div>
   </div>
@@ -69,7 +68,7 @@
       </div>
       <div class='cardPreviewArticleBottom'>
         <span>Nov 23</span>
-        <div>
+        <div class='tags'>
             <span class='tag'>
               <span class='tagYellow'>#</span>
               <span>JS</span>
@@ -92,7 +91,7 @@
       </div>
       <div class='cardPreviewArticleBottom'>
         <span>Dic 14</span>
-        <div>
+        <div class='tags'>
             <span class='tag'>
               <span class='tagGreen'>#</span>
               <span>CSS</span>
@@ -103,4 +102,8 @@
   </div>
 </div>
 
+
+<div class='fondoSvg'>
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="visual" viewBox="0 0 1920 1080" width="1920" height="1080" version="1.1"><path d="M0 806L45.7 807.5C91.3 809 182.7 812 274.2 801.3C365.7 790.7 457.3 766.3 548.8 752C640.3 737.7 731.7 733.3 823 729.3C914.3 725.3 1005.7 721.7 1097 731.5C1188.3 741.3 1279.7 764.7 1371.2 787.2C1462.7 809.7 1554.3 831.3 1645.8 821.7C1737.3 812 1828.7 771 1874.3 750.5L1920 730L1920 1081L1874.3 1081C1828.7 1081 1737.3 1081 1645.8 1081C1554.3 1081 1462.7 1081 1371.2 1081C1279.7 1081 1188.3 1081 1097 1081C1005.7 1081 914.3 1081 823 1081C731.7 1081 640.3 1081 548.8 1081C457.3 1081 365.7 1081 274.2 1081C182.7 1081 91.3 1081 45.7 1081L0 1081Z" fill="#414860"/><path d="M0 804L45.7 808.3C91.3 812.7 182.7 821.3 274.2 836.8C365.7 852.3 457.3 874.7 548.8 882.8C640.3 891 731.7 885 823 888.3C914.3 891.7 1005.7 904.3 1097 895.2C1188.3 886 1279.7 855 1371.2 853C1462.7 851 1554.3 878 1645.8 892.7C1737.3 907.3 1828.7 909.7 1874.3 910.8L1920 912L1920 1081L1874.3 1081C1828.7 1081 1737.3 1081 1645.8 1081C1554.3 1081 1462.7 1081 1371.2 1081C1279.7 1081 1188.3 1081 1097 1081C1005.7 1081 914.3 1081 823 1081C731.7 1081 640.3 1081 548.8 1081C457.3 1081 365.7 1081 274.2 1081C182.7 1081 91.3 1081 45.7 1081L0 1081Z" fill="#2e3443"/><path d="M0 1025L45.7 1015.5C91.3 1006 182.7 987 274.2 984.5C365.7 982 457.3 996 548.8 988.5C640.3 981 731.7 952 823 945.5C914.3 939 1005.7 955 1097 964.5C1188.3 974 1279.7 977 1371.2 979C1462.7 981 1554.3 982 1645.8 981.5C1737.3 981 1828.7 979 1874.3 978L1920 977L1920 1081L1874.3 1081C1828.7 1081 1737.3 1081 1645.8 1081C1554.3 1081 1462.7 1081 1371.2 1081C1279.7 1081 1188.3 1081 1097 1081C1005.7 1081 914.3 1081 823 1081C731.7 1081 640.3 1081 548.8 1081C457.3 1081 365.7 1081 274.2 1081C182.7 1081 91.3 1081 45.7 1081L0 1081Z" fill="#1e2128"/></svg>
+</div>
 

@@ -29,7 +29,7 @@ body{
   padding: 0px;
   /*background: rgb(33, 37, 41);*/
   background-color: var(--color_bg);
-
+  height:5000px;
 }
 
 h1{
