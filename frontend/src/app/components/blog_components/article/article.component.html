@@ -1,0 +1,29 @@
+<div class='cardArticle'>
+  <div class='cardArticleTitle'>
+    <div class='cardArticleTitleTop'>
+      <div>
+        <h1 class='textShadow'>{{title}}</h1>
+      </div>
+      <div class='tags'>
+        <span class='tag' *ngFor="let tag of tags">
+          <span class='tag{{tag}}'>#</span>
+          <span>{{tag}}</span>
+        </span>
+      </div>
+    </div>
+    <div class='cardArticleTitleBottom'>
+      <span class='textShadow'>{{subTitle}}</span>
+    </div>
+    <div class='cardArticleWriter'>
+        <img class='articleWriterImg' src={{writerImg}} />
+        <div class='articleWriterText'>
+          <h4>{{writerName}}</h4>
+          <span>{{date}}</span>
+        </div>
+    </div>
+  </div>
+  <div class='cardArticleContent'>
+    <angular-editor *ngIf="editorActivo" [placeholder]="'Enter text here...'" [(ngModel)]="htmlContent" ></angular-editor>
+    <div *ngIf="!editorActivo" [innerHTML]="htmlContent"></div>
+  </div>
+</div>
