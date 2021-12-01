@@ -1,0 +1,15 @@
+<div class='cardPreviewArticle'>
+  <img class='cardPreviewImg' src="{{urlImg}}" />
+  <div class='cardPreviewArticleTop' >
+    <h3 class='textShadow'>{{title}}</h3>
+  </div>
+  <div class='cardPreviewArticleBottom'>
+    <span>{{date}}</span>
+    <div class='tags'>
+      <span class='tag' *ngFor="let tag of tags">
+        <span class='tag{{tag}}'>#</span>
+        <span>{{tag}}</span>
+      </span>
+    </div>
+  </div>
+</div>
