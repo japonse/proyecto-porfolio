@@ -1,3 +1,37 @@
+.wrapper{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap:10px;
+    padding:30px 20px 20px;
+    min-height: 50vh;
+}
+
+.mainPanel{
+    border:solid 1px red;
+    width:100%;
+}
+
+.sidePanel{
+    border:solid 1px rgb(0, 60, 255);
+    max-width:20%;
+}
+
+.sidePanelContent{
+    color:var(--color_font_card);
+  background-color: var(--color_bg_card_title);
+  min-height:10vh;
+
+  border-radius: 8px;
+  box-shadow:0 7px 14px 0 rgba(65, 69, 88, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.07);
+}
+.sidePanelContentContent{
+    display:flex;
+    align-items: center;
+    background-color: var(--color_bg_card_title);
+    padding: 5px 20px 3px 20px;
+}
+
 .loginWrapper{
     min-height: 100vh;
     display: flex;
