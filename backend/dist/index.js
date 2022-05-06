@@ -10,6 +10,7 @@ const path_1 = __importDefault(require("path"));
 const typeorm_1 = require("typeorm");
 const index_1 = __importDefault(require("./routes/index"));
 const cookie_session_1 = __importDefault(require("cookie-session"));
+const passport_1 = __importDefault(require("passport"));
 const app = (0, express_1.default)();
 // cookies
 app.use((0, cookie_session_1.default)({
@@ -17,8 +18,15 @@ app.use((0, cookie_session_1.default)({
     keys: [process.env.COOKIES_KEY],
     maxAge: 24 * 60 * 60 * 1000 // 24 hours
 }));
+//Session & Auth
+app.use(passport_1.default.initialize());
+app.use(passport_1.default.session());
+require("./services/passportAuthentication");
 // angular bundle
 app.use(express_1.default.static(path_1.default.join(__dirname, '..', '..', 'frontend', 'dist', 'angular-heroku')));
+//Parse URL-encoded bodies
+app.use(express_1.default.json());
+app.use(express_1.default.urlencoded());
 // routes
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');

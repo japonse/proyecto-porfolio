@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../services/login.service';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,20 +8,23 @@ import { LoginService } from '../../services/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  password:string = "";
-
+  password: string = "";
+  borderColor: string = "";
   constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
   }
 
-  getTest(): void{
-    this.loginService.pruebaGet().subscribe(
+  authAdmin(): void{
+    this.loginService.authAdmin(this.password).subscribe(
       (res) => {
-        console.log(res)
+        if(res.authorized === 'true'){
+          this.borderColor = "#145748";
+        }else{
+          this.borderColor = "#850606";
+        }
       }
     );
-    
   }
 
 }

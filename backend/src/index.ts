@@ -6,6 +6,8 @@ import path from 'path';
 import { createConnection } from "typeorm"; 
 import masterRouter from './routes/index'; 
 import cookieSession from 'cookie-session';
+import passport from 'passport';
+ 
 
 const app = express();
 
@@ -16,8 +18,18 @@ app.use(cookieSession({
     maxAge: 24 * 60 * 60 * 1000 // 24 hours
 }));
 
+//Session & Auth
+app.use(passport.initialize());
+app.use(passport.session());
+require("./services/passportAuthentication");
+
+
 // angular bundle
 app.use(express.static(path.join(__dirname, '..', '..', 'frontend', 'dist', 'angular-heroku')));
+
+//Parse URL-encoded bodies
+app.use(express.json()); 
+app.use(express.urlencoded()); 
 
 // routes
 app.use((req, res, next) => { // make CORS not complain

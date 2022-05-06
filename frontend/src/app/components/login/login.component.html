@@ -2,11 +2,10 @@
     <div class='loginContainer'>
         <div>
             <label for="">Password</label>
-            <input id="loginPass" [(ngModel)]="password" type="password">
+            <input id="loginPass" [(ngModel)]="password" type="password" [ngStyle]="{'border-color':borderColor}">
         </div>
-        <p *ngIf="password">aa {{password}}</p>
         <div class='submitWrapper'>
-            <button class='submit' (click)="getTest()">Next</button>
+            <button class='submit' (click)="authAdmin()">Next</button>
         </div>
     </div>
 </div>

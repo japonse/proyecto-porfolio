@@ -8,14 +8,25 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 
 export class LoginService {
-  private url = '/api/recall';
-  private options:any = {
-    responseType: 'text'
+  private url: string = '/api/auth';
+  private httpOptions: object = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
   constructor(private http: HttpClient) { }
   
+  authAdmin(password: string): Observable<any>{
+    const bodyRequest: {username: string, password: string} = {username: 'admin', password: password};
+
+    const res: Observable<any> = this.http.post<any>(this.url, bodyRequest, this.httpOptions)
+    .pipe(
+      catchError(this.handleError<any>('authAdmin'))
+    );
+
+    return res;
+  }
+
   pruebaGet(): Observable<any>{
-    const res: Observable<any> = this.http.get<any>(this.url, this.options)
+    const res: Observable<any> = this.http.get<any>(this.url, this.httpOptions)
     .pipe(
       catchError(this.handleError<any>('test',null))
     );
@@ -23,7 +34,6 @@ export class LoginService {
     return res;
   }
 
-  
   private handleError<Type>(operation = 'operation', result?: Type) {
     return (error: any): Observable<Type> => {
       console.log(`${operation} failed: ${error.message}`);
