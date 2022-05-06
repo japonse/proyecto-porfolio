@@ -1,0 +1,12 @@
+<div class='loginWrapper'>
+    <div class='loginContainer'>
+        <div>
+            <label for="">Password</label>
+            <input id="loginPass" [(ngModel)]="password" type="password">
+        </div>
+        <p *ngIf="password">aa {{password}}</p>
+        <div class='submitWrapper'>
+            <button class='submit' (click)="getTest()">Next</button>
+        </div>
+    </div>
+</div>

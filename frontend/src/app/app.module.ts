@@ -11,6 +11,8 @@ import { ArticleComponent } from './components/blog_components/article/article.c
 import { MainBlogComponent } from './components/blog_components/main-blog/main-blog.component';
 import { HeaderComponent } from './components/blog_components/header/header.component';
 import { ArticlePreviewComponent } from './components/blog_components/article-preview/article-preview.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { ArticlePreviewComponent } from './components/blog_components/article-pr
     MainBlogComponent,
     HeaderComponent,
     ArticlePreviewComponent,
+    FooterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

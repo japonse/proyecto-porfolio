@@ -29,6 +29,7 @@ div{
   justify-content: space-between;
   align-items: flex-start;
   gap:10px;
+  min-height: 100vh;
 }
 
 .mainPanelContainer{
@@ -36,7 +37,7 @@ div{
   width:100%;
 }
 
-.rightPanelContainer{
+.sidePanelContainer{
   padding:10px;
   min-width:20%;
   min-height:50vh;

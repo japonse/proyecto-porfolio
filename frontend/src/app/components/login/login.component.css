@@ -1,0 +1,109 @@
+.wrapper{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap:10px;
+    padding:30px 20px 20px;
+    min-height: 50vh;
+}
+
+.mainPanel{
+    border:solid 1px red;
+    width:100%;
+}
+
+.sidePanel{
+    border:solid 1px rgb(0, 60, 255);
+    max-width:20%;
+}
+
+.sidePanelContent{
+    color:var(--color_font_card);
+  background-color: var(--color_bg_card_title);
+  min-height:10vh;
+
+  border-radius: 8px;
+  box-shadow:0 7px 14px 0 rgba(65, 69, 88, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.07);
+}
+.sidePanelContentContent{
+    display:flex;
+    align-items: center;
+    background-color: var(--color_bg_card_title);
+    padding: 5px 20px 3px 20px;
+}
+
+.loginWrapper{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Nunito, sans-serif;
+}
+
+.loginContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 30px;
+    background-color: rgb(86, 88, 117);
+    border-radius: .50rem;
+    border-bottom: 5px solid rgb(55, 55, 68);
+    border-right: 5px solid rgb(55, 55, 68);
+}
+
+input{
+    display: block;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s;
+    background-color: #eaeeff!important;
+    border-color: #eaeeff!important;
+    border: 1px solid #dee2e6;
+}
+
+input:focus{
+    outline:none;
+}
+
+input:hover{
+    outline:none;
+}
+
+label {
+    color:#eaeaea;
+    font-size: 1rem;
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+
+.submitWrapper{
+    display: flex;
+    flex-direction: column-reverse; 
+
+}
+
+.submit{
+    cursor:pointer;
+    margin-top: 10px;
+    background-color: rgb(55, 55, 68);
+    padding: 10px;
+    color:#eaeaea;
+    font-size: 1rem;
+    float: right;
+    border:none;
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: rgba(51, 51, 51, 0);
+    transition: 0.3s ease-in-out;
+}
+
+.submit:hover{
+    border-color: rgb(118, 118, 138);
+}
+
