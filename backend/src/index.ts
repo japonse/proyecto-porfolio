@@ -5,8 +5,16 @@ import express from 'express';
 import path from 'path';
 import { createConnection } from "typeorm"; 
 import masterRouter from './routes/index'; 
+import cookieSession from 'cookie-session';
 
 const app = express();
+
+// cookies
+app.use(cookieSession({
+    name: 'session',
+    keys: [process.env.COOKIES_KEY],
+    maxAge: 24 * 60 * 60 * 1000 // 24 hours
+}));
 
 // angular bundle
 app.use(express.static(path.join(__dirname, '..', '..', 'frontend', 'dist', 'angular-heroku')));

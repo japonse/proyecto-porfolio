@@ -9,7 +9,14 @@ const express_1 = __importDefault(require("express"));
 const path_1 = __importDefault(require("path"));
 const typeorm_1 = require("typeorm");
 const index_1 = __importDefault(require("./routes/index"));
+const cookie_session_1 = __importDefault(require("cookie-session"));
 const app = (0, express_1.default)();
+// cookies
+app.use((0, cookie_session_1.default)({
+    name: 'session',
+    keys: [process.env.COOKIES_KEY],
+    maxAge: 24 * 60 * 60 * 1000 // 24 hours
+}));
 // angular bundle
 app.use(express_1.default.static(path_1.default.join(__dirname, '..', '..', 'frontend', 'dist', 'angular-heroku')));
 // routes

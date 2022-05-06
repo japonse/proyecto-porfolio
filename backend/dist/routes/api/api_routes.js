@@ -8,8 +8,8 @@ let router = express_1.default.Router();
 router.get('/', (req, res) => {
     res.send("<html><h1>I'm an API!</h1></html>");
 });
-router.get('/call', api_controller_1.default.callControler);
-router.get('/recall', api_controller_1.default.recallControler);
+router.get('/call', api_controller_1.default.call);
+router.get('/recall', api_controller_1.default.recall);
 router.get('*', function (req, res) { res.redirect('/error/notfound'); });
 module.exports = router;
 //# sourceMappingURL=api_routes.js.map
