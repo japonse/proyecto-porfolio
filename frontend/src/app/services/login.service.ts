@@ -8,7 +8,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 
 export class LoginService {
-  private url = 'http://localhost:8080/api/call';
+  private url = '/api/recall';
   private options:any = {
     responseType: 'text'
   };
